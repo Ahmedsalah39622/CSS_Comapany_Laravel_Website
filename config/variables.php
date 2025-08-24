@@ -1,11 +1,10 @@
 <?php
 // Variables
 return [
-  "creatorName" => "Lifeline
-  ",
+  "creatorName" => "Ahmed Salah",
   "creatorUrl" => "https://pixinvent.com",
-  "templateName" => "Lifeline",
-  "templateSuffix" => "Bootstrap Admin Template",
+  "templateName" => "CSS",
+  "templateSuffix" => "ERP and Software Solutions",
   "templateVersion" => "2.0.0",
   "templateFree" => false,
   "templateDescription" => "Start your development with a Dashboard for Bootstrap 5",
@@ -20,11 +19,12 @@ return [
   "changelog" => "https://demos.pixinvent.com/vuexy/changelog.html",
   "repository" => "https://github.com/pixinvent/vuexy-html-admin-template",
   "gitRepo" => "pixinvent",
-  "gitRepoAccess" => "vLifeline",
+  //"gitRepoAccess" => "vLifeline",
   "githubFreeUrl" => "https://tools.pixinvent.com/github/github-access",
   "facebookUrl" => "https://www.facebook.com/pixinvents/",
   "twitterUrl" => "https://twitter.com/pixinvents",
   "githubUrl" => "https://github.com/pixinvent",
   "dribbbleUrl" => "https://dribbble.com/pixinvent",
-  "instagramUrl" => "https://www.instagram.com/pixinvents/"
+  "instagramUrl" => "https://www.instagram.com/pixinvents/",
+  "logoPath" => "D:\Website\website\public\assets\img\front-pages\branding\logo-1.png"
 ];

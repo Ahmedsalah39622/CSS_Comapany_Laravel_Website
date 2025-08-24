@@ -1,3 +1,5 @@
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+
 @isset($pageConfigs)
 {!! Helper::updatePageConfig($pageConfigs) !!}
 @endisset

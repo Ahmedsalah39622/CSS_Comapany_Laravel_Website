@@ -1384,4 +1384,18 @@ TemplateCustomizer.LANGUAGES = {
   }
 }
 
+// Helper: Switch to Arabic RTL
+window.switchToArabicRTL = function () {
+  if (window.TemplateCustomizer) {
+    // Set direction to RTL
+    document.documentElement.setAttribute('dir', 'rtl')
+    // Set language to Arabic
+    window.TemplateCustomizer.prototype.setLang.call(window.TemplateCustomizer, 'ar', true, true)
+    // Set RTL in settings and cookies
+    document.cookie = 'direction=rtl; path=/;'
+    // Reload to apply changes
+    window.location.reload()
+  }
+}
+
 window.TemplateCustomizer = TemplateCustomizer

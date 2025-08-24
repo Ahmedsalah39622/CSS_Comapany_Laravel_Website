@@ -1,3 +1,5 @@
+<html lang="{{ app()->getLocale() }}" dir="{{ app()->getLocale() == 'ar' ? 'rtl' : 'ltr' }}">
+
 @extends('layouts/layoutMaster')
 
 @section('title', 'Dashboard - Lifeline Hospital')
@@ -21,8 +23,8 @@
   <div class="col-xxl-2 col-md-4 col-sm-6">
     <div class="card h-100">
       <div class="card-header pb-3">
-        <h5 class="card-title mb-1">Appointments</h5>
-        <p class="card-subtitle">Today</p>
+        <h5 class="card-title mb-1">{{ __('Appointments') }}</h5>
+        <p class="card-subtitle">{{ __('Today') }}</p>
       </div>
       <div class="card-body">
         <div id="appointmentsToday"></div>
@@ -38,8 +40,8 @@
   <div class="col-xxl-2 col-md-4 col-sm-6">
     <div class="card h-100">
       <div class="card-header pb-0">
-        <h5 class="card-title mb-1">Patients</h5>
-        <p class="card-subtitle">Last Month</p>
+        <h5 class="card-title mb-1">{{ __('Patients') }}</h5>
+        <p class="card-subtitle">{{ __('Last Month') }}</p>
       </div>
       <div id="patientsLastMonth"></div>
       <div class="card-body pt-0">
@@ -56,8 +58,8 @@
     <div class="card h-100">
       <div class="card-body">
         <div class="badge p-2 bg-label-danger mb-3 rounded"><i class="ti ti-credit-card ti-28px"></i></div>
-        <h5 class="card-title mb-1">Total Revenue</h5>
-        <p class="card-subtitle">Last Week</p>
+        <h5 class="card-title mb-1">{{ __('Total Revenue') }}</h5>
+        <p class="card-subtitle">{{ __('Last Week') }}</p>
         <p class="text-heading mb-3 mt-1">$28.5k</p>
         <div>
           <span class="badge bg-label-danger">-3.2%</span>
@@ -71,8 +73,8 @@
     <div class="card h-100">
       <div class="card-body">
         <div class="badge p-2 bg-label-success mb-3 rounded"><i class="ti ti-scissors ti-28px"></i></div>
-        <h5 class="card-title mb-1">Total Operations</h5>
-        <p class="card-subtitle">Last Week</p>
+        <h5 class="card-title mb-1">{{ __('Total Operations') }}</h5>
+        <p class="card-subtitle">{{ __('Last Week') }}</p>
         <p class="text-heading mb-3 mt-1">24</p>
         <div>
           <span class="badge bg-label-success">+12.5%</span>
@@ -87,8 +89,8 @@
       <div class="card-body d-flex justify-content-between">
         <div class="d-flex flex-column me-xl-7">
           <div class="card-title mb-auto">
-            <h5 class="mb-2 text-nowrap">Patient Growth</h5>
-            <p class="mb-0">Weekly Report</p>
+            <h5 class="mb-2 text-nowrap">{{ __('Patient Growth') }}</h5>
+            <p class="mb-0">{{ __('Weekly Report') }}</p>
           </div>
           <div class="chart-statistics">
             <h3 class="card-title mb-1">+124</h3>
@@ -105,47 +107,61 @@
     <div class="card">
       <div class="card-header d-flex justify-content-between">
         <div class="card-title m-0">
-          <h5 class="mb-1">Doctor Performance</h5>
-          <p class="card-subtitle">Yearly Performance Overview</p>
+          <h5 class="mb-1">{{ __('Doctor Performance') }}</h5>
+          <p class="card-subtitle">{{ __('Yearly Performance Overview') }}</p>
         </div>
         <div class="dropdown">
-          <button class="btn btn-text-secondary rounded-pill text-muted border-0 p-2 me-n1" type="button" id="doctorPerformanceTabsId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-text-secondary rounded-pill text-muted border-0 p-2 me-n1" type="button"
+            id="doctorPerformanceTabsId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="ti ti-dots-vertical ti-md text-muted"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="doctorPerformanceTabsId">
-            <a class="dropdown-item" href="javascript:void(0);">View More</a>
-            <a class="dropdown-item" href="javascript:void(0);">Delete</a>
+            <a class="dropdown-item" href="javascript:void(0);">{{ __('View More') }}</a>
+            <a class="dropdown-item" href="javascript:void(0);">{{ __('Delete') }}</a>
           </div>
         </div>
       </div>
       <div class="card-body">
         <ul class="nav nav-tabs widget-nav-tabs pb-8 gap-4 mx-1 d-flex flex-nowrap" role="tablist">
           <li class="nav-item">
-            <a href="javascript:void(0);" class="nav-link btn active d-flex flex-column align-items-center justify-content-center" role="tab" data-bs-toggle="tab" data-bs-target="#navs-appointments-id" aria-controls="navs-appointments-id" aria-selected="true">
+            <a href="javascript:void(0);"
+              class="nav-link btn active d-flex flex-column align-items-center justify-content-center" role="tab"
+              data-bs-toggle="tab" data-bs-target="#navs-appointments-id" aria-controls="#navs-appointments-id"
+              aria-selected="true">
               <div class="badge bg-label-secondary rounded p-2"><i class="ti ti-calendar ti-md"></i></div>
-              <h6 class="tab-widget-title mb-0 mt-2">Appointments</h6>
+              <h6 class="tab-widget-title mb-0 mt-2">{{ __('Appointments') }}</h6>
             </a>
           </li>
           <li class="nav-item">
-            <a href="javascript:void(0);" class="nav-link btn d-flex flex-column align-items-center justify-content-center" role="tab" data-bs-toggle="tab" data-bs-target="#navs-surgeries-id" aria-controls="navs-surgeries-id" aria-selected="false">
+            <a href="javascript:void(0);"
+              class="nav-link btn d-flex flex-column align-items-center justify-content-center" role="tab"
+              data-bs-toggle="tab" data-bs-target="#navs-surgeries-id" aria-controls="#navs-surgeries-id"
+              aria-selected="false">
               <div class="badge bg-label-secondary rounded p-2"><i class="ti ti-scissors ti-md"></i></div>
-              <h6 class="tab-widget-title mb-0 mt-2">Surgeries</h6>
+              <h6 class="tab-widget-title mb-0 mt-2">{{ __('Surgeries') }}</h6>
             </a>
           </li>
           <li class="nav-item">
-            <a href="javascript:void(0);" class="nav-link btn d-flex flex-column align-items-center justify-content-center" role="tab" data-bs-toggle="tab" data-bs-target="#navs-revenue-id" aria-controls="navs-revenue-id" aria-selected="false">
+            <a href="javascript:void(0);"
+              class="nav-link btn d-flex flex-column align-items-center justify-content-center" role="tab"
+              data-bs-toggle="tab" data-bs-target="#navs-revenue-id" aria-controls="#navs-revenue-id"
+              aria-selected="false">
               <div class="badge bg-label-secondary rounded p-2"><i class="ti ti-currency-dollar ti-md"></i></div>
-              <h6 class="tab-widget-title mb-0 mt-2">Revenue</h6>
+              <h6 class="tab-widget-title mb-0 mt-2">{{ __('Revenue') }}</h6>
             </a>
           </li>
           <li class="nav-item">
-            <a href="javascript:void(0);" class="nav-link btn d-flex flex-column align-items-center justify-content-center" role="tab" data-bs-toggle="tab" data-bs-target="#navs-feedback-id" aria-controls="navs-feedback-id" aria-selected="false">
+            <a href="javascript:void(0);"
+              class="nav-link btn d-flex flex-column align-items-center justify-content-center" role="tab"
+              data-bs-toggle="tab" data-bs-target="#navs-feedback-id" aria-controls="#navs-feedback-id"
+              aria-selected="false">
               <div class="badge bg-label-secondary rounded p-2"><i class="ti ti-message-circle ti-md"></i></div>
-              <h6 class="tab-widget-title mb-0 mt-2">Feedback</h6>
+              <h6 class="tab-widget-title mb-0 mt-2">{{ __('Feedback') }}</h6>
             </a>
           </li>
           <li class="nav-item">
-            <a href="javascript:void(0);" class="nav-link btn d-flex align-items-center justify-content-center disabled" role="tab" data-bs-toggle="tab" aria-selected="false">
+            <a href="javascript:void(0);" class="nav-link btn d-flex align-items-center justify-content-center disabled"
+              role="tab" data-bs-toggle="tab" aria-selected="false">
               <div class="badge bg-label-secondary rounded p-2"><i class="ti ti-plus ti-md"></i></div>
             </a>
           </li>
@@ -173,17 +189,18 @@
     <div class="card h-100">
       <div class="card-header d-flex justify-content-between">
         <div class="card-title mb-0">
-          <h5 class="mb-1">Patient Demographics</h5>
-          <p class="card-subtitle">Monthly Overview</p>
+          <h5 class="mb-1">{{ __('Patient Demographics') }}</h5>
+          <p class="card-subtitle">{{ __('Monthly Overview') }}</p>
         </div>
         <div class="dropdown">
-          <button class="btn btn-text-secondary rounded-pill text-muted border-0 p-2 me-n1" type="button" id="patientDemographics" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-text-secondary rounded-pill text-muted border-0 p-2 me-n1" type="button"
+            id="patientDemographics" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="ti ti-dots-vertical ti-md text-muted"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="patientDemographics">
-            <a class="dropdown-item" href="javascript:void(0);">Download</a>
-            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+            <a class="dropdown-item" href="javascript:void(0);">{{ __('Download') }}</a>
+            <a class="dropdown-item" href="javascript:void(0);">{{ __('Refresh') }}</a>
+            <a class="dropdown-item" href="javascript:void(0);">{{ __('Share') }}</a>
           </div>
         </div>
       </div>
@@ -255,15 +272,17 @@
   <div class="col-xxl-6 order-2">
     <div class="card h-100">
       <div class="card-header d-flex justify-content-between">
-        <h5 class="card-title m-0 me-2 pt-1 mb-2 d-flex align-items-center"><i class="ti ti-list-details me-3"></i> Activity Timeline</h5>
+        <h5 class="card-title m-0 me-2 pt-1 mb-2 d-flex align-items-center"><i class="ti ti-list-details me-3"></i> {{
+          __('Activity Timeline') }}</h5>
         <div class="dropdown">
-          <button class="btn btn-text-secondary rounded-pill text-muted border-0 p-2 me-n1" type="button" id="timelineWapper" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <button class="btn btn-text-secondary rounded-pill text-muted border-0 p-2 me-n1" type="button"
+            id="timelineWapper" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             <i class="ti ti-dots-vertical ti-md text-muted"></i>
           </button>
           <div class="dropdown-menu dropdown-menu-end" aria-labelledby="timelineWapper">
-            <a class="dropdown-item" href="javascript:void(0);">Download</a>
-            <a class="dropdown-item" href="javascript:void(0);">Refresh</a>
-            <a class="dropdown-item" href="javascript:void(0);">Share</a>
+            <a class="dropdown-item" href="javascript:void(0);">{{ __('Download') }}</a>
+            <a class="dropdown-item" href="javascript:void(0);">{{ __('Refresh') }}</a>
+            <a class="dropdown-item" href="javascript:void(0);">{{ __('Share') }}</a>
           </div>
         </div>
       </div>
@@ -273,11 +292,11 @@
             <span class="timeline-point timeline-point-primary"></span>
             <div class="timeline-event">
               <div class="timeline-header mb-3">
-                <h6 class="mb-0">12 Appointments Completed</h6>
+                <h6 class="mb-0">12 {{ __('Appointments Completed') }}</h6>
                 <small class="text-muted">12 min ago</small>
               </div>
               <p class="mb-2">
-                Appointments have been successfully completed.
+                {{ __('Appointments have been successfully completed.') }}
               </p>
             </div>
           </li>
@@ -285,11 +304,11 @@
             <span class="timeline-point timeline-point-success"></span>
             <div class="timeline-event">
               <div class="timeline-header mb-3">
-                <h6 class="mb-0">New Patient Admitted</h6>
+                <h6 class="mb-0">{{ __('New Patient Admitted') }}</h6>
                 <small class="text-muted">45 min ago</small>
               </div>
               <p class="mb-2">
-                Patient John Doe admitted for surgery.
+                {{ __('Patient John Doe admitted for surgery.') }}
               </p>
             </div>
           </li>
@@ -297,11 +316,11 @@
             <span class="timeline-point timeline-point-info"></span>
             <div class="timeline-event">
               <div class="timeline-header mb-3">
-                <h6 class="mb-0">New Doctor Onboarded</h6>
+                <h6 class="mb-0">{{ __('New Doctor Onboarded') }}</h6>
                 <small class="text-muted">2 Day Ago</small>
               </div>
               <p class="mb-2">
-                Dr. Jane Smith joined the cardiology department.
+                {{ __('Dr. Jane Smith joined the cardiology department.') }}
               </p>
             </div>
           </li>
@@ -310,4 +329,13 @@
     </div>
   </div>
 </div>
+
+<!-- Place this in your main layout, e.g., layouts/layoutMaster.blade.php -->
+<form method="POST" action="{{ route('change.language') }}">
+  @csrf
+  <select name="locale" onchange="this.form.submit()">
+    <option value="en" {{ app()->getLocale() == 'en' ? 'selected' : '' }}>English</option>
+    <option value="ar" {{ app()->getLocale() == 'ar' ? 'selected' : '' }}>العربية</option>
+  </select>
+</form>
 @endsection

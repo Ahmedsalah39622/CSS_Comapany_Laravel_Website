@@ -1,3 +1,4 @@
+
 <?php
 
 use Illuminate\Support\Facades\Route;
@@ -41,3 +42,36 @@ Route::middleware('auth')->group(function () {
     return redirect()->route('pages-home'); // إعادة التوجيه بعد تسجيل الدخول
   })->name('dashboard');
 });
+
+// 🔹 صفحة فيديوهات الشرح
+Route::get('/tutorials', function () {
+  return view('content.pages.pages-tutorials');
+})->name('pages-tutorials');
+
+// 🔹 About Us Page
+Route::get('/about-us', function () {
+  return view('content.pages.about-us');
+})->name('about-us');
+
+// 🔹 Business Partners Page
+Route::get('/business-partners', function () {
+  return view('content.pages.business-partners');
+})->name('business-partners');
+
+// 🔹 Product Details Page
+Route::get('/product-details', function () {
+  return view('content.pages.product-details');
+})->name('product-details');
+
+// 🔹 صفحة تسجيل الدخول - غلاف
+Route::get('/auth/login-cover', function () {
+  return view('content.pages.auth-login-cover');
+});
+// 🔹 صفحة تسجيل حساب جديد - أساسي
+Route::get('/auth/register-basic', function () {
+  return view('content.pages.auth-register-basic');
+});
+// 🔹 صفحة تسجيل الدخول - غلاف
+Route::get('/auth/login-basic', function () {
+  return view('content.pages.auth-login-basic');
+})->name('auth-login-basic');
