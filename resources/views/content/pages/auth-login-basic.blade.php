@@ -36,7 +36,7 @@ $configData = Helper::appClasses();
           data-app-dark-img="illustrations/bg-shape-image-dark.png">
       </div>
     </div>
-    <!-- /Left Text -->
+    <!-- /Left Text 00-->
 
 
     @section('title', 'Login')
